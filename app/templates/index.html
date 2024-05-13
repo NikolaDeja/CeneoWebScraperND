@@ -1,4 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-    <p>This is {{product_id}} file</p>
+    <h2>PURPOSE OF THE APPLICATION</h2>
+        <p class="home">The main purpose of the application is to extract opinions about products from the Ceneo.pl
+        website. For product, the code of which will be given as a parameter, its name and all
+        available opinions about it should be extracted. </p>
+    <h2>DESCRIPTION OF THE APPLICATION'S OPERATION</h2>
+        <p class="home"> Using the opinions page users can input a product code, and the application retrieves the corresponding product's name and all available opinions:
+        about it from Ceneo.pl. Each opinion is parsed to extract various details including opinion ID, author, recommendation, score,
+        content, advantages, disadvantages, helpfulness ratings, publishing date, and purchase date.
+        When the wrong product code is entered the error will pop up on the screen.
+        </p>
+    <h2>LIBRARIES USED</h2>
+    <div class="list">
+        <ul class="ulind">
+            <li class="ind">app</li>
+            <li class="ind">flask</li>
+            <li class="ind">bs4</li>
+        </ul>
+    </div>
 {% endblock %}

@@ -1,21 +1,60 @@
 body{background-color: rgb(211, 254, 254);}
 
-h1 {
+h1,h2 {
     color:skyblue;
     text-align: center;
 }
 div {text-align: center;}
-ul, li {display: inline; 
+ul, li {
+    display: inline-block; 
     background-color: lightblue; 
     size: 20px;
     margin-right: 30px;
     margin-left: 30px;
+    color:white;
 }
-a {
+button {
     text-decoration: none;
     color: white;
+    background-color: lightblue;
+    border: none;
+}
+button:hover{
+    background-color: skyblue;
 }
 
 footer {
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    background-color: lightblue;
+    padding: 10px 0;
+}
+.col-auto, .col-form-label{
+    color: #87ceeb;
+    margin-top: 10px;
+    
+}
+.err{
+    color: rgb(111, 111, 255);
+}
+form{ margin-top: 30px;}
+
+.intro{
+    text-align: center;
     color: skyblue;
+    size: 30px
+}
+.home{
+    text-align: center;
+    color: skyblue;
+}
+
+.list{text-align: center;}
+.ulind, .ind{
+    display: inline-block;
+    text-align: left; 
 }
