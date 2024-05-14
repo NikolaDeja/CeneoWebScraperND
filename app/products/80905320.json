@@ -1,0 +1,26 @@
+{
+    "product_id": "80905320",
+    "product_name": "Tuban Hel W Puszce Crazy Hel 3062",
+    "opinions_count": 47,
+    "pros_count": 10,
+    "cons_count": 14,
+    "average_score": 2.5638297872340425,
+    "score_distribution": {
+        "0.0": NaN,
+        "0.5": 11.0,
+        "1.0": 9.0,
+        "1.5": 5.0,
+        "2.0": 1.0,
+        "2.5": 1.0,
+        "3.0": 1.0,
+        "3.5": NaN,
+        "4.0": 3.0,
+        "4.5": 2.0,
+        "5.0": 14.0
+    },
+    "recommendation_distribution": {
+        "true": 18,
+        "false": 27,
+        "NaN": 0
+    }
+}
