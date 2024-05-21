@@ -1,6 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
+    <div class="card">
+        <ul class="prod_list_ng">
+            <li class="prod_list_ng">Product name</li>
+            <li class="prod_list_ng">Number of opinions</li>
+            <li class="prod_list_ng">Number of pros</li>
+            <li class="prod_list_ng">Number of cons</li>
+            <li class="prod_list_ng">Average score</li>
+        </ul><br>
+    </div>
     {% for product in products %}
-        <div class="card">{{product}}</div>
-    {% endfor %}    
+    <div>
+        <ul class="prod_list">
+            <li class="prod_list">{{product.product_name}}</li>
+            <li class="prod_list">{{product.opinions_count}}</li>
+            <li class="prod_list">{{product.pros_count}}</li>
+            <li class="prod_list">{{product.cons_count}}</li>
+            <li class="prod_list">{{product.average_score}}</li>
+        </ul><br>
+    </div>     
+    <div> 
+        <button class="prodb" onclick="location.href='{{url_for('download_json', product_id=product.product_id)}}'">JSON</button>
+        <button class="prodb" onclick="location.href='{{url_for('download_xlsx', product_id=product.product_id)}}'">XLSX</button>
+        <button class="prodb" onclick="location.href='{{url_for('download_csv', product_id=product.product_id)}}'">CSV</button>
+    </div> 
+    {% endfor %} 
+    
 {% endblock %}
