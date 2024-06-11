@@ -1,10 +1,10 @@
 {
     "product_id": "50644345",
     "product_name": "Intex 28273 450x220m",
-    "opinions_count": 51,
+    "opinions_count": 52,
     "pros_count": 15,
     "cons_count": 1,
-    "average_score": 4.803921568627451,
+    "average_score": 4.788461538461538,
     "score_distribution": {
         "0.0": NaN,
         "0.5": NaN,
@@ -14,12 +14,12 @@
         "2.5": NaN,
         "3.0": 1.0,
         "3.5": 1.0,
-        "4.0": 2.0,
+        "4.0": 3.0,
         "4.5": 9.0,
         "5.0": 38.0
     },
     "recommendation_distribution": {
-        "true": 39,
+        "true": 40,
         "false": 0,
         "NaN": 0
     }
