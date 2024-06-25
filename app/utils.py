@@ -28,14 +28,8 @@ def recommend(recommendation):
 def translate(text, from_lang = "pl", to_lang = "en"):
     if text:
         if isinstance(text, list):
-            return {
-                from_lang : text,
-                to_lang : [GoogleTranslator(source=from_lang, target=to_lang).translate(t) for t in text]
-            }
-        return {
-                from_lang : text,
-                to_lang : GoogleTranslator(source=from_lang, target=to_lang).translate(text)
-            }
+            return [GoogleTranslator(source=from_lang, target=to_lang).translate(t) for t in text]
+        return GoogleTranslator(source=from_lang, target=to_lang).translate(text)
         
     return None
 
@@ -44,9 +38,12 @@ selectors = {
     "author" : ["span.user-post__author-name"],
     "recommendation" : ["span.user-post__author-recomendation > em"],
     "score" : ["span.user-post__score-count"],
-    "content" : ["div.user-post__text"],
-    "pros" : ["div.review-feature__title--positives ~ div.review-feature__item", None, True],
-    "cons" : ["div.review-feature__title--negatives ~ div.review-feature__item", None, True],
+    "content_pl" : ["div.user-post__text"],
+    "content_en" : ["div.user-post__text"],
+    "pros_pl" : ["div.review-feature__title--positives ~ div.review-feature__item", None, True],
+    "pros_en" : ["div.review-feature__title--positives ~ div.review-feature__item", None, True],
+    "cons_pl" : ["div.review-feature__title--negatives ~ div.review-feature__item", None, True],
+    "cons_en" : ["div.review-feature__title--negatives ~ div.review-feature__item", None, True],
     "helpful" : ["button.vote-yes > span"],
     "unhelpful" : ["button.vote-no > span"],
     "publish_date" : ["span.user-post__published > time:nth-child(1)","datetime"],
@@ -58,7 +55,7 @@ transformations = {
     "score" : rate,
     "helpful" : int,
     "unhelpful" : int,
-    "content" : translate,
-    "pros" : translate,
-    "cons" : translate,
+    "content_en" : translate,
+    "pros_en" : translate,
+    "cons_en" : translate,
 }

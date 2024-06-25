@@ -1,16 +1,16 @@
-from app import app
-from flask import render_template, request, redirect, url_for, send_file
-from bs4 import BeautifulSoup
-import requests
-from app import utils
 import os
 import json
-from io import BytesIO
-import pandas as pd
-import numpy as np
-from matplotlib import pyplot as plt
-import matplotlib
+import requests
 import xlsxwriter
+import matplotlib
+import numpy as np
+import pandas as pd
+from app import app
+from app import utils
+from io import BytesIO
+from bs4 import BeautifulSoup
+from matplotlib import pyplot as plt
+from flask import render_template, request, redirect, url_for, send_file
 matplotlib.use("Agg")
 
 @app.route('/')
@@ -60,8 +60,8 @@ def extract():
                 MAX_SCORE = 5
                 opinions.score = opinions.score.apply(lambda s: round(s*MAX_SCORE,1))
                 opinions_count = len(opinions)
-                pros_count = opinions.pros.apply(lambda p: None if not p else p).count()
-                cons_count =opinions.cons.apply(lambda c: None if not c else c).count()
+                pros_count = opinions.pros_pl.apply(lambda p: None if not p else p).count()
+                cons_count =opinions.cons_pl.apply(lambda c: None if not c else c).count()
                 average_score = opinions.score.mean()
                 score_distribution = opinions.score.value_counts().reindex(np.arange(0,5.5,0.5))
                 recommendation_distribution = opinions.recommendation.value_counts(dropna=False).reindex([True, False, np.nan],fill_value = 0)
